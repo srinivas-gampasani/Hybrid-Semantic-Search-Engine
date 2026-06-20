@@ -1,0 +1,92 @@
+[
+  {
+    "query_id": "Q001",
+    "query": "how do transformer models work for NLP tasks",
+    "relevant_docs": ["DOC001", "DOC007"],
+    "category": "machine_learning"
+  },
+  {
+    "query_id": "Q002",
+    "query": "vector database fast nearest neighbor search",
+    "relevant_docs": ["DOC002", "DOC006", "DOC014", "DOC017", "DOC019"],
+    "category": "infrastructure"
+  },
+  {
+    "query_id": "Q003",
+    "query": "BM25 keyword search algorithm ranking",
+    "relevant_docs": ["DOC003", "DOC011"],
+    "category": "retrieval"
+  },
+  {
+    "query_id": "Q004",
+    "query": "combining dense and sparse retrieval hybrid search",
+    "relevant_docs": ["DOC004", "DOC017", "DOC018"],
+    "category": "hybrid"
+  },
+  {
+    "query_id": "Q005",
+    "query": "reranking search results with cross encoder",
+    "relevant_docs": ["DOC005", "DOC004"],
+    "category": "ranking"
+  },
+  {
+    "query_id": "Q006",
+    "query": "sentence embeddings bi-encoder models",
+    "relevant_docs": ["DOC007", "DOC001"],
+    "category": "machine_learning"
+  },
+  {
+    "query_id": "Q007",
+    "query": "measuring search quality MRR NDCG metrics",
+    "relevant_docs": ["DOC009", "DOC008", "DOC018"],
+    "category": "evaluation"
+  },
+  {
+    "query_id": "Q008",
+    "query": "A/B testing search ranking improvements",
+    "relevant_docs": ["DOC008", "DOC012"],
+    "category": "evaluation"
+  },
+  {
+    "query_id": "Q009",
+    "query": "production deployment search at scale latency",
+    "relevant_docs": ["DOC010", "DOC020", "DOC016"],
+    "category": "infrastructure"
+  },
+  {
+    "query_id": "Q010",
+    "query": "user click feedback implicit signals ranking",
+    "relevant_docs": ["DOC012", "DOC008"],
+    "category": "evaluation"
+  },
+  {
+    "query_id": "Q011",
+    "query": "FastAPI REST API machine learning serving",
+    "relevant_docs": ["DOC013", "DOC020"],
+    "category": "engineering"
+  },
+  {
+    "query_id": "Q012",
+    "query": "query expansion synonyms search recall",
+    "relevant_docs": ["DOC015", "DOC003"],
+    "category": "search_algorithms"
+  },
+  {
+    "query_id": "Q013",
+    "query": "Pinecone Weaviate vector store comparison",
+    "relevant_docs": ["DOC014", "DOC017", "DOC002"],
+    "category": "infrastructure"
+  },
+  {
+    "query_id": "Q014",
+    "query": "HNSW graph index approximate nearest neighbor",
+    "relevant_docs": ["DOC006", "DOC002", "DOC014"],
+    "category": "infrastructure"
+  },
+  {
+    "query_id": "Q015",
+    "query": "reciprocal rank fusion RRF score aggregation",
+    "relevant_docs": ["DOC004"],
+    "category": "hybrid"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "experiment_name": "BM25 Baseline vs Hybrid RRF",
+  "variant_a": "BM25_baseline",
+  "variant_b": "Hybrid_RRF",
+  "queries_a": 15,
+  "queries_b": 15,
+  "mrr_a": 1.0,
+  "mrr_b": 1.0,
+  "ndcg_a": 0.8897,
+  "ndcg_b": 0.9094,
+  "mrr_improvement": 0.0,
+  "ndcg_improvement": 2.21,
+  "mrr_p_value": NaN,
+  "ndcg_p_value": 0.6435,
+  "significant": false,
+  "winner": "BM25_baseline"
+}

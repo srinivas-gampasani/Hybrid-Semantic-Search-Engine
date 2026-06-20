@@ -1,0 +1,122 @@
+[
+  {
+    "id": "DOC001",
+    "title": "Introduction to Transformer Models in NLP",
+    "category": "machine_learning",
+    "text": "Transformer models have revolutionized natural language processing since the introduction of the attention mechanism. The BERT model, introduced by Google in 2018, uses bidirectional training of the Transformer to learn deep representations of language. These models pre-train on large corpora and then fine-tune on specific downstream tasks such as text classification, named entity recognition, and question answering. GPT models from OpenAI use a unidirectional autoregressive approach to language modeling."
+  },
+  {
+    "id": "DOC002",
+    "title": "Vector Databases and Semantic Search",
+    "category": "search_infrastructure",
+    "text": "Vector databases store high-dimensional embeddings and enable fast approximate nearest neighbor search. Pinecone and Weaviate are leading vector database solutions that support HNSW indexing for sub-millisecond query latency at scale. Dense retrieval using bi-encoder models generates query and document embeddings independently and measures similarity via dot product or cosine similarity. These systems can index millions of vectors while maintaining low latency."
+  },
+  {
+    "id": "DOC003",
+    "title": "BM25 and Sparse Retrieval Algorithms",
+    "category": "information_retrieval",
+    "text": "BM25 is a bag-of-words retrieval function that ranks documents based on term frequency and inverse document frequency. It is the backbone of most traditional search engines including Elasticsearch and Apache Solr. BM25 excels at exact keyword matching and is particularly effective for technical queries with specific terminology. The algorithm uses parameters k1 and b to control term saturation and document length normalization respectively."
+  },
+  {
+    "id": "DOC004",
+    "title": "Reciprocal Rank Fusion for Hybrid Search",
+    "category": "search_algorithms",
+    "text": "Reciprocal Rank Fusion (RRF) is a rank aggregation method that combines results from multiple retrieval systems. Given ranked lists from dense and sparse retrievers, RRF assigns a score of 1/(k + rank) to each document and sums these scores across all lists. The constant k=60 is commonly used to balance the influence of top and lower-ranked results. RRF is parameter-free beyond k and consistently outperforms linear score interpolation methods."
+  },
+  {
+    "id": "DOC005",
+    "title": "Cross-Encoder Reranking for Search Quality",
+    "category": "search_algorithms",
+    "text": "Cross-encoders process the query and document together through a transformer model, producing a relevance score. Unlike bi-encoders, cross-encoders attend to interactions between query and document tokens, yielding superior relevance judgments. They are used as rerankers on the top-k results from a faster first-stage retriever. Models like ms-marco-MiniLM-L-6-v2 deliver strong reranking accuracy with reasonable latency."
+  },
+  {
+    "id": "DOC006",
+    "title": "HNSW Index for Approximate Nearest Neighbor Search",
+    "category": "search_infrastructure",
+    "text": "Hierarchical Navigable Small World (HNSW) graphs enable fast approximate nearest neighbor search in high-dimensional spaces. The algorithm builds a multi-layer graph where upper layers form long-range connections and lower layers contain dense local connections. HNSW achieves sub-linear search time with high recall, making it suitable for production vector search. Parameters M and ef_construction control the graph quality and build time trade-off."
+  },
+  {
+    "id": "DOC007",
+    "title": "Sentence Transformers and Bi-Encoder Models",
+    "category": "machine_learning",
+    "text": "Sentence Transformers produce fixed-size sentence embeddings by mean-pooling the output of transformer encoder models. The all-MiniLM-L6-v2 model maps sentences to a 384-dimensional dense vector space. These bi-encoders encode query and documents independently, enabling offline pre-computation of document embeddings for efficient retrieval. Training uses multiple negative ranking loss to bring similar sentence pairs closer in embedding space."
+  },
+  {
+    "id": "DOC008",
+    "title": "A/B Testing Frameworks for Search Relevance",
+    "category": "search_evaluation",
+    "text": "A/B testing compares two search configurations by randomly splitting user traffic and measuring engagement metrics such as click-through rate, mean reciprocal rank, and session length. Statistical significance testing using t-tests and chi-squared tests ensures observed differences are not due to random variation. Shadow mode testing allows new retrieval models to score queries without affecting production results, enabling safe offline comparison."
+  },
+  {
+    "id": "DOC009",
+    "title": "Mean Reciprocal Rank and NDCG Evaluation Metrics",
+    "category": "search_evaluation",
+    "text": "Mean Reciprocal Rank (MRR) measures the average reciprocal rank of the first relevant document across queries. MRR@10 considers only the top 10 retrieved results and is widely used in industry benchmarks. Normalized Discounted Cumulative Gain (NDCG) accounts for graded relevance judgments and the position of relevant documents in the ranked list. These metrics are computed on held-out query sets with human relevance annotations."
+  },
+  {
+    "id": "DOC010",
+    "title": "Production Semantic Search at Scale",
+    "category": "search_infrastructure",
+    "text": "Deploying semantic search in production requires careful attention to index freshness, query latency SLAs, and cost. Batch embedding pipelines use GPU acceleration to encode new documents and update the vector index. Load balancing across multiple vector database replicas ensures high availability. Caching frequent query embeddings with Redis reduces redundant GPU compute. Monitoring query latency P99 and recall@k metrics in Grafana dashboards is essential for maintaining search quality."
+  },
+  {
+    "id": "DOC011",
+    "title": "Elasticsearch Full-Text Search and BM25",
+    "category": "information_retrieval",
+    "text": "Elasticsearch is a distributed search engine built on Apache Lucene that uses BM25 as its default relevance scoring algorithm. It supports field-level boosting, query-time analyzers, and multi-match queries for flexible full-text search. Inverted indexes enable fast keyword lookup across billions of documents. Elasticsearch can be combined with dense vector search using the kNN API to build hybrid retrieval pipelines."
+  },
+  {
+    "id": "DOC012",
+    "title": "Implicit User Feedback for Search Ranking",
+    "category": "search_evaluation",
+    "text": "Implicit feedback signals such as click-through rate, dwell time, and skip rate reveal user satisfaction without requiring explicit relevance labels. Learning to Rank (LTR) models use these signals as training labels to optimize ranking functions. Clicks are inherently noisy due to position bias, which can be corrected using inverse propensity scoring. Online learning systems continuously update ranking models using streaming feedback from production traffic."
+  },
+  {
+    "id": "DOC013",
+    "title": "FastAPI for Building Search Microservices",
+    "category": "engineering",
+    "text": "FastAPI is a modern Python web framework for building high-performance REST APIs with automatic OpenAPI documentation. It uses Python type hints and Pydantic models for request validation and serialization. Async endpoint handlers enable concurrent request processing without blocking the event loop. FastAPI integrates naturally with machine learning models, making it ideal for serving embedding models and search endpoints in production."
+  },
+  {
+    "id": "DOC014",
+    "title": "Pinecone Managed Vector Database",
+    "category": "search_infrastructure",
+    "text": "Pinecone is a fully managed vector database optimized for machine learning applications. It supports real-time upserts, metadata filtering, and namespace partitioning for multi-tenant deployments. Pinecone uses a combination of HNSW and product quantization to balance recall and storage efficiency. The Python client supports batch upserts of up to 100 vectors per request with automatic retry logic."
+  },
+  {
+    "id": "DOC015",
+    "title": "Query Expansion and Synonym Handling in Search",
+    "category": "search_algorithms",
+    "text": "Query expansion improves recall by adding synonyms, related terms, or paraphrases to the original query. Techniques include thesaurus-based expansion, pseudo-relevance feedback using the top retrieved documents, and neural query expansion using language models. Synonym files in Elasticsearch map equivalent terms at index time. Dense retrieval with sentence transformers naturally handles semantic synonyms without explicit synonym configuration."
+  },
+  {
+    "id": "DOC016",
+    "title": "Redis for Search Result Caching",
+    "category": "engineering",
+    "text": "Redis is an in-memory key-value store used for caching search results and query embeddings. Caching the top-k results for frequent queries reduces vector database load and query latency. TTL-based cache expiration ensures stale results are refreshed periodically. Redis Sorted Sets are useful for storing ranked result lists with scores as the sort key. Cache hit rates above 30 percent significantly improve overall system throughput."
+  },
+  {
+    "id": "DOC017",
+    "title": "Weaviate Vector Search with GraphQL",
+    "category": "search_infrastructure",
+    "text": "Weaviate is an open-source vector database that combines object storage with vector search using a GraphQL API. It supports hybrid search combining BM25 and dense retrieval natively through the alpha parameter. Weaviate modules integrate external embedding models including OpenAI, Cohere, and HuggingFace. The HNSW index in Weaviate supports product quantization compression for memory-efficient storage of large vector indexes."
+  },
+  {
+    "id": "DOC018",
+    "title": "BEIR Benchmark for Information Retrieval",
+    "category": "search_evaluation",
+    "text": "BEIR is a heterogeneous benchmark for zero-shot evaluation of information retrieval models across 18 diverse datasets including biomedical, financial, and news domains. Models are evaluated using NDCG@10 on held-out test sets without any domain-specific fine-tuning. BM25 serves as a strong baseline on keyword-heavy datasets while dense models excel on semantic matching tasks. Hybrid retrieval consistently outperforms either method alone across most BEIR datasets."
+  },
+  {
+    "id": "DOC019",
+    "title": "Product Quantization for Vector Compression",
+    "category": "search_infrastructure",
+    "text": "Product quantization (PQ) compresses high-dimensional vectors by splitting them into subvectors and quantizing each subspace independently. A codebook of cluster centroids is learned for each subspace using k-means clustering. PQ reduces storage from 4 bytes per float to 1 byte per subvector code, enabling 4-8x compression with minimal recall loss. Faiss implements efficient PQ search using asymmetric distance computation for fast querying."
+  },
+  {
+    "id": "DOC020",
+    "title": "Kubernetes Deployment for Search Services",
+    "category": "engineering",
+    "text": "Kubernetes orchestrates containerized search services with horizontal pod autoscaling based on CPU and memory metrics. Readiness probes ensure pods serving search traffic have completed model loading before receiving requests. Rolling deployments with zero downtime replace old pods gradually, maintaining availability during updates. Resource requests and limits prevent noisy neighbors from degrading search latency in shared clusters."
+  }
+]
