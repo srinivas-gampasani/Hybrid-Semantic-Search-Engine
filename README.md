@@ -195,5 +195,5 @@ All plots in `outputs/plots/` are **real outputs** from the pipeline run:
 
 ---
 
-*Portfolio Project — Srinivas Gampasani | AI & ML Engineer | St. Louis, MO*  
-*srinivasgampasani7@gmail.com | linkedin.com/in/srinivas-gampasani-85338b235/*
+**Built by Srinivas Gampasani | Data Scientist, Gen AI & ML Engineer | USA**  
+[LinkedIn](https://www.linkedin.com/in/srinivasgampasani/) · [GitHub](https://github.com/srinivas-gampasani)
